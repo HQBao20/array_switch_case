@@ -66,5 +66,15 @@ void create_array(u8_t *byarr, u8_t bynum);
  */
 void print_array(u8_t *byarr, u8_t bynum);
 
+/**
+ * @brief Add element into arr
+ * 
+ * @param bynum 
+ * @param byvalue 
+ * @param bypos 
+ * @param byarr 
+ */
+void add_element(u8_t *bynum, u8_t byvalue, u8_t bypos, u8_t *byarr);
+
 /******************************************************************************/
 #endif /* EXAMPLE_H_ */ 
