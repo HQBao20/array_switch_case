@@ -76,5 +76,14 @@ void print_array(u8_t *byarr, u8_t bynum);
  */
 void add_element(u8_t *bynum, u8_t byvalue, u8_t bypos, u8_t *byarr);
 
+/**
+ * @brief Delete element into arr
+ * 
+ * @param bynum 
+ * @param bypos 
+ * @param byarr 
+ */
+void dele_element(u8_t *bynum, u8_t bypos, u8_t *byarr);
+
 /******************************************************************************/
 #endif /* EXAMPLE_H_ */ 
