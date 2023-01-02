@@ -60,4 +60,14 @@ void create_array(u8_t *byarr, u8_t bynum)
         scanf("%d", byarr + i);
     }
 }
+
+void print_array(u8_t *byarr, u8_t bynum)
+{
+    u8_t i = 0;
+
+    for(i = 0; i < bynum; i++)
+    {
+        prinf("%d ", *(byarr + i));
+    }
+}
 /******************************************************************************/

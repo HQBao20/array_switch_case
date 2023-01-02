@@ -50,7 +50,21 @@
 /******************************************************************************/
 /*                            EXPORTED FUNCTIONS                              */
 /******************************************************************************/
+/**
+ * @brief Create a array object
+ * 
+ * @param byarr 
+ * @param bynum 
+ */
 void create_array(u8_t *byarr, u8_t bynum);
+
+/**
+ * @brief Print array
+ * 
+ * @param byarr 
+ * @param bynum 
+ */
+void print_array(u8_t *byarr, u8_t bynum);
 
 /******************************************************************************/
 #endif /* EXAMPLE_H_ */ 
