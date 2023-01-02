@@ -29,6 +29,7 @@
 /******************************************************************************/
 #include <stdio.h>
 #include <stdint.h>
+#include "function.h"
 
 /******************************************************************************/
 /*                     EXPORTED TYPES and DEFINITIONS                         */
@@ -59,8 +60,10 @@ void allocate_array(u8_t **pbyptr, u8_t bynum);
 int main(void)
 {
     u8_t bynumber = 0;
+    u8_t *pbynumber = NULL;
     u8_t *pbyarr = NULL;
     u8_t bycase = 0;
+    pbynumber = &bynumber;
     
     printf("****************************************************************\n");
     printf("Chuong trinh quan ly day so bang mang\n");
@@ -83,9 +86,40 @@ int main(void)
         switch (bycase)
         {
             case 'c':
-                /* code */
-                break;
-            
+            {
+                create_array(pbyarr, bynumber);
+            }
+            break;
+            case 'p':
+            {
+                print_array(pbyarr, bynumber);
+            }
+            case 'i':
+            {
+                u8_t byaddvalue = 0;
+                u8_t bypos = 0;
+
+                printf("Nhap phan tu muon them: ");
+                scanf("%d", &byaddvalue);
+                printf("Nhap vị tri muon them: ");
+                scanf("%d", &bypos);
+                add_element(pbynumber, byaddvalue, bypos, pbyarr);
+                print_array(pbyarr, bynumber);
+            }
+            case 'd':
+            {
+                u8_t bypos = 0;
+
+                printf("Nhap vị tri muon xoa: ");
+                scanf("%d", &bypos);
+                dele_element(pbynumber, bypos, pbyarr);
+                print_array(pbyarr, bynumber);
+
+            }
+            case 'e':
+            {
+                exit(1);
+            }
             default:
                 break;
         }
