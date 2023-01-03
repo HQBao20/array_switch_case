@@ -72,7 +72,7 @@ int main(void)
     printf("Nhap i -> Them 1 phan tu vao day\n");
     printf("Nhap d -> Xoa 1 phan tu tai vi tri thu k\n");
     printf("Nhap s -> Sap xep day so theo chieu tang dan\n");
-    printf("Nhap t -> Tim kiem 1 so x co trong day khong?\n");
+    printf("Nhap t -> Tim kiem phan tu lon nhat\n");
     printf("Nhap e -> Thoat chuong trinh\n");
     printf("****************************************************************\n");
     printf("Nhap so phan tu mang: ");
