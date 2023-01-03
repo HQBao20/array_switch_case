@@ -7,20 +7,20 @@
                 |   |       |   |   |   | |   |   |   |   |   | |   |
                 |   |_ _ _  |   |_ _|   | |   |   |   |   |   | |   |
                 |_ _ _ _ _| |_ _ _ _ _ _| |_ _|   |_ _|   |_ _| |_ _|
-                                (C)2021 Lumi
- * Copyright (c) 2021
+                                (C)2023 Lumi
+ * Copyright (c) 2023
  * Lumi, JSC.
  * All Rights Reserved
  *
- * File name: Example.c
+ * File name: function.c
  *
- * Description: This code is used for tranning Lumi IOT member. It is the code form statandard.
+ * Description:
  *
- * Author: PhuongNP
+ * Author: BaoHQ
  *
- * Last Changed By:  $Author: phuongnp $
+ * Last Changed By:  $Author: baohq $
  * Revision:         $Revision: $
- * Last Changed:     $Date: $Jun 9, 2021
+ * Last Changed:     $Date: $Jan 3, 2023
  *
  * Code sample:
  ******************************************************************************/
@@ -29,8 +29,7 @@
 /******************************************************************************/
 #include <stdio.h>
 #include <stdint.h>
-#include "typedefs.h"
-#include "function.h"
+#include "coderule_git1/source/mid/function.h"
 
 /******************************************************************************/
 /*                     EXPORTED TYPES and DEFINITIONS                         */
@@ -48,22 +47,30 @@
 /*                            PRIVATE FUNCTIONS                               */
 /******************************************************************************/
 /**
+ * @func realloc_array
  * @brief Realloc array
  * 
- * @param pbyPtr 
- * @param byNum 
+ * @param [pbyPtr] : Array is initialized
+ * @param [byNum] : The number of elements of the array
  */
 static void_t realloc_array(u8_p *pbyPtr, u8_t byNum);
 
 /******************************************************************************/
 /*                            EXPORTED FUNCTIONS                              */
 /******************************************************************************/
-static void realloc_array(u8_p *pbyPtr, u8_t byNum)
+static void_t realloc_array(u8_p *pbyPtr, u8_t byNum)
 {
     *pbyPtr = (u8_p*)realloc(*pbyPtr, byNum * sizeof(u8_t));
 }
 
-void create_array(u8_p pbyBuffer, u8_t byNum)
+/**
+ * @func create_array
+ * @brief Create a array object
+ * 
+ * @param [pbyBuffer] : Array is initialized
+ * @param [byNum] : The number of elements of the array
+ */
+void_t create_array(u8_p pbyBuffer, u8_t byNum)
 {
     u8_t i = 0;
 
@@ -74,7 +81,14 @@ void create_array(u8_p pbyBuffer, u8_t byNum)
     }
 }
 
-void print_array(u8_p pbyBuffer, u8_t byNum)
+/**
+ * @func print_array
+ * @brief Print array
+ * 
+ * @param [pbyBuffer] : Array is initialized
+ * @param [byNum] : The number of elements of the array
+ */
+void_t print_array(u8_p pbyBuffer, u8_t byNum)
 {
     u8_t i = 0;
 
@@ -84,6 +98,15 @@ void print_array(u8_p pbyBuffer, u8_t byNum)
     }
 }
 
+/**
+ * @func add_element
+ * @brief Add element into arr
+ * 
+ * @param [pbyNum] : The number of elements of the array
+ * @param [byValue] : Value added
+ * @param [byPos] : Position added
+ * @param [pbyBuffer] : Array is initialized
+ */
 void add_element(u8_p pbyNum, u8_t byValue, u8_t byPos, u8_p pbyBuffer)
 {
     u8_t i = 0;
@@ -105,6 +128,14 @@ void add_element(u8_p pbyNum, u8_t byValue, u8_t byPos, u8_p pbyBuffer)
     *(pbyBuffer + byPos) = byValue;
 }
 
+/**
+ * @func dele_element
+ * @brief Delete element into arr
+ * 
+ * @param [pbyNum] : The number of elements of the array
+ * @param [byPos] : Position deleted
+ * @param [pbyBuffer] : Array is initialized
+ */
 void dele_element(u8_p pbyNum, u8_t byPos, u8_p pbyBuffer)
 {
     u8_t i = 0;
@@ -125,6 +156,13 @@ void dele_element(u8_p pbyNum, u8_t byPos, u8_p pbyBuffer)
     }
 }
 
+/**
+ * @func arrange_element
+ * @brief Arrange elements of arr
+ * 
+ * @param [pbyBuffer] : Array is initialized
+ * @param [byNum] : The number of elements of the array
+ */
 void arrange_element(u8_p pbyBuffer, u8_t byNum)
 {
     u8_t i = 0;
@@ -145,6 +183,14 @@ void arrange_element(u8_p pbyBuffer, u8_t byNum)
     }
 }
 
+/**
+ * @func find_elem_max
+ * @brief Find the max element in arr
+ * 
+ * @param [pbyBuffer] : Array is initialized
+ * @param [byNum] : The number of elements of the array
+ * @return u8_t 
+ */
 u8_t find_elem_max(u8_p pbyBuffer, u8_t byNum)
 {
     u8_t i = 0;
