@@ -29,7 +29,7 @@
 /******************************************************************************/
 #include <stdio.h>
 #include <stdint.h>
-#include "coderule_git1/source/mid/function.h"
+#include "source/mid/function.h"
 
 /******************************************************************************/
 /*                     EXPORTED TYPES and DEFINITIONS                         */
@@ -47,30 +47,30 @@
 /*                            PRIVATE FUNCTIONS                               */
 /******************************************************************************/
 /**
- * @func realloc_array
+ * @func reallocArray
  * @brief Realloc array
  * 
  * @param [pbyPtr] : Array is initialized
  * @param [byNum] : The number of elements of the array
  */
-static void_t realloc_array(u8_p *pbyPtr, u8_t byNum);
+static void_t reallocArray(u8_p *pbyPtr, u8_t byNum);
 
 /******************************************************************************/
 /*                            EXPORTED FUNCTIONS                              */
 /******************************************************************************/
-static void_t realloc_array(u8_p *pbyPtr, u8_t byNum)
+static void_t reallocArray(u8_p *pbyPtr, u8_t byNum)
 {
     *pbyPtr = (u8_p*)realloc(*pbyPtr, byNum * sizeof(u8_t));
 }
 
 /**
- * @func create_array
+ * @func createArray
  * @brief Create a array object
  * 
  * @param [pbyBuffer] : Array is initialized
  * @param [byNum] : The number of elements of the array
  */
-void_t create_array(u8_p pbyBuffer, u8_t byNum)
+void_t createArray(u8_p pbyBuffer, u8_t byNum)
 {
     u8_t i = 0;
 
@@ -82,13 +82,13 @@ void_t create_array(u8_p pbyBuffer, u8_t byNum)
 }
 
 /**
- * @func print_array
+ * @func printArray
  * @brief Print array
  * 
  * @param [pbyBuffer] : Array is initialized
  * @param [byNum] : The number of elements of the array
  */
-void_t print_array(u8_p pbyBuffer, u8_t byNum)
+void_t printArray(u8_p pbyBuffer, u8_t byNum)
 {
     u8_t i = 0;
 
@@ -99,7 +99,7 @@ void_t print_array(u8_p pbyBuffer, u8_t byNum)
 }
 
 /**
- * @func add_element
+ * @func addElement
  * @brief Add element into arr
  * 
  * @param [pbyNum] : The number of elements of the array
@@ -107,7 +107,7 @@ void_t print_array(u8_p pbyBuffer, u8_t byNum)
  * @param [byPos] : Position added
  * @param [pbyBuffer] : Array is initialized
  */
-void add_element(u8_p pbyNum, u8_t byValue, u8_t byPos, u8_p pbyBuffer)
+void_t addElement(u8_p pbyNum, u8_t byValue, u8_t byPos, u8_p pbyBuffer)
 {
     u8_t i = 0;
 
@@ -129,14 +129,14 @@ void add_element(u8_p pbyNum, u8_t byValue, u8_t byPos, u8_p pbyBuffer)
 }
 
 /**
- * @func dele_element
+ * @func deleElement
  * @brief Delete element into arr
  * 
  * @param [pbyNum] : The number of elements of the array
  * @param [byPos] : Position deleted
  * @param [pbyBuffer] : Array is initialized
  */
-void dele_element(u8_p pbyNum, u8_t byPos, u8_p pbyBuffer)
+void_t deleElement(u8_p pbyNum, u8_t byPos, u8_p pbyBuffer)
 {
     u8_t i = 0;
 
@@ -157,13 +157,13 @@ void dele_element(u8_p pbyNum, u8_t byPos, u8_p pbyBuffer)
 }
 
 /**
- * @func arrange_element
+ * @func arrangeElement
  * @brief Arrange elements of arr
  * 
  * @param [pbyBuffer] : Array is initialized
  * @param [byNum] : The number of elements of the array
  */
-void arrange_element(u8_p pbyBuffer, u8_t byNum)
+void_t arrangeElement(u8_p pbyBuffer, u8_t byNum)
 {
     u8_t i = 0;
     u8_t j = 0;
@@ -184,14 +184,14 @@ void arrange_element(u8_p pbyBuffer, u8_t byNum)
 }
 
 /**
- * @func find_elem_max
+ * @func findElemMax
  * @brief Find the max element in arr
  * 
  * @param [pbyBuffer] : Array is initialized
  * @param [byNum] : The number of elements of the array
  * @return u8_t 
  */
-u8_t find_elem_max(u8_p pbyBuffer, u8_t byNum)
+u8_t findElemMax(u8_p pbyBuffer, u8_t byNum)
 {
     u8_t i = 0;
     u8_t byMax = 0;

@@ -30,7 +30,7 @@
 /******************************************************************************/
 /*                              INCLUDE FILES                                 */
 /******************************************************************************/
-#include "coderule_git1/source/utils/typedefs.h"
+#include "source/utils/typedefs.h"
 
 /******************************************************************************/
 /*                     EXPORTED TYPES and DEFINITIONS                         */
@@ -52,25 +52,25 @@
 /*                            EXPORTED FUNCTIONS                              */
 /******************************************************************************/
 /**
- * @func create_array
+ * @func createArray
  * @brief Create a array object
  * 
  * @param [pbyBuffer] : Array is initialized
  * @param [byNum] : The number of elements of the array
  */
-void_t create_array(u8_p pbyBuffer, u8_t byNum);
+void_t createArray(u8_p pbyBuffer, u8_t byNum);
 
 /**
- * @func print_array
+ * @func printArray
  * @brief Print array
  * 
  * @param [pbyBuffer] : Array is initialized
  * @param [byNum] : The number of elements of the array
  */
-void_t print_array(u8_p pbyBuffer, u8_t byNum);
+void_t printArray(u8_p pbyBuffer, u8_t byNum);
 
 /**
- * @func add_element
+ * @func addElement
  * @brief Add element into arr
  * 
  * @param [pbyNum] : The number of elements of the array
@@ -78,36 +78,36 @@ void_t print_array(u8_p pbyBuffer, u8_t byNum);
  * @param [byPos] : Position added
  * @param [pbyBuffer] : Array is initialized
  */
-void_t add_element(u8_p pbyNum, u8_t byValue, u8_t byPos, u8_p pbyBuffer);
+void_t addElement(u8_p pbyNum, u8_t byValue, u8_t byPos, u8_p pbyBuffer);
 
 /**
- * @func dele_element
+ * @func deleElement
  * @brief Delete element into arr
  * 
  * @param [pbyNum] : The number of elements of the array
  * @param [byPos] : Position deleted
  * @param [pbyBuffer] : Array is initialized
  */
-void_t dele_element(u8_p pbyNum, u8_t byPos, u8_p pbyBuffer);
+void_t deleElement(u8_p pbyNum, u8_t byPos, u8_p pbyBuffer);
 
 /**
- * @func arrange_element
+ * @func arrangElement
  * @brief Arrange elements of arr
  * 
  * @param [pbyBuffer] : Array is initialized
  * @param [byNum] : The number of elements of the array
  */
-void_t arrange_element(u8_p pbyBuffer, u8_t byNum);
+void_t arrangeElement(u8_p pbyBuffer, u8_t byNum);
 
 /**
- * @func find_elem_max
+ * @func findElemMax
  * @brief Find the max element in arr
  * 
  * @param [pbyBuffer] : Array is initialized
  * @param [byNum] : The number of elements of the array
  * @return u8_t 
  */
-u8_t find_elem_max(u8_p pbyBuffer, u8_t byNum);
+u8_t findElemMax(u8_p pbyBuffer, u8_t byNum);
 
 /******************************************************************************/
 #endif /* function_H_ */ 
