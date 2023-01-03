@@ -29,8 +29,8 @@
 /******************************************************************************/
 #include <stdio.h>
 #include <stdint.h>
-#include "coderule_git1/source/app/main.h"
-#include "coderule_git1/source/mid/function.h"
+#include "source/app/main.h"
+#include "source/mid/function.h"
 
 /******************************************************************************/
 /*                     EXPORTED TYPES and DEFINITIONS                         */
@@ -47,7 +47,7 @@
 /******************************************************************************/
 /*                            PRIVATE FUNCTIONS                               */
 /******************************************************************************/
-static void_t allocate_array(u8_p *pbyPtr, u8_t byNum);
+static void_t allocateArray(u8_p *pbyPtr, u8_t byNum);
 
 /******************************************************************************/
 /*                            EXPORTED FUNCTIONS                              */
@@ -142,13 +142,13 @@ int main(void_t)
 }
 
 /**
- * @func allocate_array
+ * @func allocateArray
  * @brief Allocating memory for array
  * 
  * @param [pbyPtr] : Buffer need to allocate memory
  * @param [byNum] : Number of elements to allocate
  */
-static void_t allocate_array(u8_p *pbyPtr, u8_t byNum)
+static void_t allocateArray(u8_p *pbyPtr, u8_t byNum)
 {
     *pbyPtr = (u8_p*)malloc(byNum * sizeof(u8_t));
     if(*pbyPtr == NULL)
