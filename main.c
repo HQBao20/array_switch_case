@@ -52,18 +52,18 @@
  * @param pbyptr 
  * @param bynum 
  */
-void allocate_array(u8_t **pbyptr, u8_t bynum);
+void allocate_array(u8_t **pbyPtr, u8_t byNum);
 
 /******************************************************************************/
 /*                            EXPORTED FUNCTIONS                              */
 /******************************************************************************/
 int main(void)
 {
-    u8_t bynumber = 0;
-    u8_t *pbynumber = NULL;
-    u8_t *pbyarr = NULL;
-    u8_t bycase = 0;
-    pbynumber = &bynumber;
+    u8_t byNumber = 0;
+    u8_t *pbyNumber = NULL;
+    u8_t *pbyBuffer = NULL;
+    u8_t byCase = 0;
+    pbyNumber = &byNumber;
     
     printf("****************************************************************\n");
     printf("Chuong trinh quan ly day so bang mang\n");
@@ -76,36 +76,36 @@ int main(void)
     printf("Nhap e -> Thoat chuong trinh\n");
     printf("****************************************************************\n");
     printf("Nhap so phan tu mang: ");
-    scanf("%d", &bynumber);
-    allocate_array(&pbyarr, bynumber);
+    scanf("%d", &byNumber);
+    allocate_array(&pbyBuffer, byNumber);
     while(1)
     {
         printf("Nhap lua chon: ");
-        bycase = getchar();
-        switch (bycase)
+        byCase = getchar();
+        switch (byCase)
         {
             case 'c':
             {
-                create_array(pbyarr, bynumber);
+                create_array(pbyBuffer, byNumber);
             }
             break;
             case 'p':
             {
-                print_array(pbyarr, bynumber);
+                print_array(pbyBuffer, byNumber);
             }
             break;
             case 'i':
             {
-                u8_t byaddvalue = 0;
-                u8_t bypos = 0;
+                u8_t byAddvalue = 0;
+                u8_t byPos = 0;
 
                 printf("Nhap phan tu muon them: ");
-                scanf("%d", &byaddvalue);
+                scanf("%d", &byAddvalue);
                 printf("Nhap vị tri muon them: ");
-                scanf("%d", &bypos);
-                add_element(pbynumber, byaddvalue, bypos, pbyarr);
+                scanf("%d", &byPos);
+                add_element(pbyNumber, byAddvalue, byPos, pbyBuffer);
                 printf("Mang sau khi them phan tu: ");
-                print_array(pbyarr, bynumber);
+                print_array(pbyBuffer, byNumber);
             }
             break;
             case 'd':
@@ -114,20 +114,20 @@ int main(void)
 
                 printf("Nhap vị tri muon xoa: ");
                 scanf("%d", &bypos);
-                dele_element(pbynumber, bypos, pbyarr);
+                dele_element(pbyNumber, bypos, pbyBuffer);
                 printf("Mang sau khi xoa phan tu: ");
-                print_array(pbyarr, bynumber);
+                print_array(pbyBuffer, byNumber);
             }
             break;
             case 's':
             {
-                arrange_element(pbyarr, bynumber);
+                arrange_element(pbyBuffer, byNumber);
                 printf("Mang sap xep tang dan la: ");
-                print_array(pbyarr, bynumber);
+                print_array(pbyBuffer, byNumber);
             }break;
             case 't':
             {
-                printf("Phan tu lon nhat trong mang la: %d", find_elem_max(pbyarr, bynumber));
+                printf("Phan tu lon nhat trong mang la: %d", find_elem_max(pbyBuffer, byNumber));
             }
             break;
             case 'e':
@@ -143,10 +143,10 @@ int main(void)
     return 0;
 }
 
-void allocate_array(u8_t **pbyptr, u8_t bynum)
+void allocate_array(u8_t **pbyPtr, u8_t byNum)
 {
-    *pbyptr = (u8_t**)malloc(bynum * sizeof(u8_t));
-    if(*pbyptr == NULL)
+    *pbyPtr = (u8_t**)malloc(byNum * sizeof(u8_t));
+    if(*pbyPtr == NULL)
     {
         exit(0);
     }
