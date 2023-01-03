@@ -132,6 +132,7 @@ int main(void)
             break;
             case 'e':
             {
+                free(pbyBuffer);
                 exit(1);
             }
             break;
