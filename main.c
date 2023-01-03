@@ -72,7 +72,6 @@ int main(void)
     printf("Nhap i -> Them 1 phan tu vao day\n");
     printf("Nhap d -> Xoa 1 phan tu tai vi tri thu k\n");
     printf("Nhap s -> Sap xep day so theo chieu tang dan\n");
-    printf("Nhap x -> Sap xep theo chieu giam\n");
     printf("Nhap t -> Tim kiem 1 so x co trong day khong?\n");
     printf("Nhap e -> Thoat chuong trinh\n");
     printf("****************************************************************\n");
@@ -94,6 +93,7 @@ int main(void)
             {
                 print_array(pbyarr, bynumber);
             }
+            break;
             case 'i':
             {
                 u8_t byaddvalue = 0;
@@ -104,8 +104,10 @@ int main(void)
                 printf("Nhap vị tri muon them: ");
                 scanf("%d", &bypos);
                 add_element(pbynumber, byaddvalue, bypos, pbyarr);
+                printf("Mang sau khi them phan tu: ");
                 print_array(pbyarr, bynumber);
             }
+            break;
             case 'd':
             {
                 u8_t bypos = 0;
@@ -113,13 +115,26 @@ int main(void)
                 printf("Nhap vị tri muon xoa: ");
                 scanf("%d", &bypos);
                 dele_element(pbynumber, bypos, pbyarr);
+                printf("Mang sau khi xoa phan tu: ");
                 print_array(pbyarr, bynumber);
-
             }
+            break;
+            case 's':
+            {
+                arrange_element(pbyarr, bynumber);
+                printf("Mang sap xep tang dan la: ");
+                print_array(pbyarr, bynumber);
+            }break;
+            case 't':
+            {
+                printf("Phan tu lon nhat trong mang la: %d", find_elem_max(pbyarr, bynumber));
+            }
+            break;
             case 'e':
             {
                 exit(1);
             }
+            break;
             default:
                 break;
         }
