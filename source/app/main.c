@@ -8,19 +8,19 @@
 				|   |_ _ _  |   |_ _|   | |   |   |   |   |   | |   |
 				|_ _ _ _ _| |_ _ _ _ _ _| |_ _|   |_ _|   |_ _| |_ _|
 								(C)2021 Lumi
- * Copyright (c) 2021
+ * Copyright (c) 2023
  * Lumi, JSC.
  * All Rights Reserved
  *
- * File name: Example.c
+ * File name: main.c
  *
- * Description: This code is used for tranning Lumi IOT member. It is the code form statandard.
+ * Description:
  *
- * Author: PhuongNP
+ * Author: BaoHQ
  *
- * Last Changed By:  $Author: phuongnp $
+ * Last Changed By:  $Author: baohq $
  * Revision:         $Revision: $
- * Last Changed:     $Date: $Jun 9, 2021
+ * Last Changed:     $Date: $Jan 3, 2023
  *
  * Code sample:
  ******************************************************************************/
@@ -29,6 +29,7 @@
 /******************************************************************************/
 #include <stdio.h>
 #include <stdint.h>
+#include "coderule_git1/source/app/main.h"
 #include "function.h"
 
 /******************************************************************************/
@@ -46,22 +47,18 @@
 /******************************************************************************/
 /*                            PRIVATE FUNCTIONS                               */
 /******************************************************************************/
-/**
- * @brief Allocating memory for array
- * 
- * @param pbyPtr 
- * @param byNum 
- */
-void allocate_array(u8_t **pbyPtr, u8_t byNum);
+static void_t allocate_array(u8_p *pbyPtr, u8_t byNum);
 
 /******************************************************************************/
 /*                            EXPORTED FUNCTIONS                              */
 /******************************************************************************/
-int main(void)
+
+/******************************************************************************/
+int main(void_t)
 {
     u8_t byNumber = 0;
-    u8_t *pbyNumber = NULL;
-    u8_t *pbyBuffer = NULL;
+    u8_p pbyNumber = NULL;
+    u8_p pbyBuffer = NULL;
     u8_t byCase = 0;
     pbyNumber = &byNumber;
     
@@ -144,12 +141,18 @@ int main(void)
     return 0;
 }
 
-void allocate_array(u8_t **pbyPtr, u8_t byNum)
+/**
+ * @func allocate_array
+ * @brief Allocating memory for array
+ * 
+ * @param [pbyPtr] : Buffer need to allocate memory
+ * @param [byNum] : Number of elements to allocate
+ */
+static void_t allocate_array(u8_p *pbyPtr, u8_t byNum)
 {
-    *pbyPtr = (u8_t**)malloc(byNum * sizeof(u8_t));
+    *pbyPtr = (u8_p*)malloc(byNum * sizeof(u8_t));
     if(*pbyPtr == NULL)
     {
         exit(0);
     }
 }
-/******************************************************************************/
