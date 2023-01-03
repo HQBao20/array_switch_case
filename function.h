@@ -53,51 +53,51 @@
 /**
  * @brief Create a array object
  * 
- * @param byarr 
- * @param bynum 
+ * @param pbyBuffer 
+ * @param byNum 
  */
 void create_array(u8_t *pbyBuffer, u8_t byNum);
 
 /**
  * @brief Print array
  * 
- * @param byarr 
- * @param bynum 
+ * @param pbyBuffer 
+ * @param byNum 
  */
 void print_array(u8_t *pbyBuffer, u8_t byNum);
 
 /**
  * @brief Add element into arr
  * 
- * @param bynum 
- * @param byvalue 
- * @param bypos 
- * @param byarr 
+ * @param pbyNum 
+ * @param byValue 
+ * @param byPos 
+ * @param pbyBuffer 
  */
 void add_element(u8_t *pbyNum, u8_t byValue, u8_t byPos, u8_t *pbyBuffer);
 
 /**
  * @brief Delete element into arr
  * 
- * @param bynum 
- * @param bypos 
- * @param byarr 
+ * @param pbyNum 
+ * @param byPos 
+ * @param pbyBuffer 
  */
 void dele_element(u8_t *pbyNum, u8_t byPos, u8_t *pbyBuffer);
 
 /**
  * @brief Arrange elements of arr
  * 
- * @param pbyarr 
- * @param bynum 
+ * @param pbyBuffer 
+ * @param byNum 
  */
 void arrange_element(u8_t *pbyBuffer, u8_t byNum);
 
 /**
  * @brief Find the max element in arr
  * 
- * @param pbyarr 
- * @param bynum 
+ * @param pbyBuffer 
+ * @param byNum 
  * @return u8_t 
  */
 u8_t find_elem_max(u8_t *pbyBuffer, u8_t byNum);

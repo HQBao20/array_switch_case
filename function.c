@@ -49,10 +49,10 @@
 /**
  * @brief Realloc array
  * 
- * @param byotr 
- * @param bynum 
+ * @param pbyPtr 
+ * @param byNum 
  */
-static void realloc_array(u8_t **byptr, u8_t bynum);
+static void realloc_array(u8_t **pbyPtr, u8_t byNum);
 
 /******************************************************************************/
 /*                            EXPORTED FUNCTIONS                              */

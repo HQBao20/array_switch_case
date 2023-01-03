@@ -49,8 +49,8 @@
 /**
  * @brief Allocating memory for array
  * 
- * @param pbyptr 
- * @param bynum 
+ * @param pbyPtr 
+ * @param byNum 
  */
 void allocate_array(u8_t **pbyPtr, u8_t byNum);
 
