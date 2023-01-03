@@ -46,7 +46,6 @@
 /******************************************************************************/
 /*                            PRIVATE FUNCTIONS                               */
 /******************************************************************************/
-
 /**
  * @brief Realloc array
  * 
@@ -123,5 +122,42 @@ void dele_element(u8_t *bynum, u8_t bypos, u8_t *byarr)
     {
         *(byarr + i) = *(byarr + i + 1);
     }
+}
+
+void arrange_element(u8_t* pbyarr, u8_t bynum)
+{
+    u8_t i = 0;
+    u8_t j = 0;
+    u8_t bytemp = 0;
+
+    for(i = 0; i < bynum; i++)
+    {
+        for(j = i; j < bynum - 1; j++)
+        {
+            if(*(pbyarr + i) > *(pbyarr + j + 1))
+            {
+                bytemp = *(pbyarr + j + 1);
+                *(pbyarr + j + 1) = *(pbyarr + i);
+                *(pbyarr + i) = bytemp;
+            }
+        }
+    }
+}
+
+u8_t find_elem_max(u8_t *pbyarr, u8_t bynum)
+{
+    u8_t i = 0;
+    u8_t bymax = 0;
+    bymax = *pbyarr;
+
+    for (i = 1; i < bynum; i++)
+    {
+        if(bymax < *(pbyarr + i))
+        {
+            bymax = *(pbyarr + i);
+        }
+    }
+
+    return bymax;
 }
 /******************************************************************************/

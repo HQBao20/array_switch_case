@@ -25,8 +25,8 @@
  * Code sample:
  ******************************************************************************/
 // Enclosing macro to prevent multiple inclusion
-#ifndef EXAMPLE_H_
-#define EXAMPLE_H_
+#ifndef function_H_
+#define function_H_
 /******************************************************************************/
 /*                              INCLUDE FILES                                 */
 /******************************************************************************/
@@ -85,5 +85,22 @@ void add_element(u8_t *bynum, u8_t byvalue, u8_t bypos, u8_t *byarr);
  */
 void dele_element(u8_t *bynum, u8_t bypos, u8_t *byarr);
 
+/**
+ * @brief Arrange elements of arr
+ * 
+ * @param pbyarr 
+ * @param bynum 
+ */
+void arrange_element(u8_t *pbyarr, u8_t bynum);
+
+/**
+ * @brief Find the max element in arr
+ * 
+ * @param pbyarr 
+ * @param bynum 
+ * @return u8_t 
+ */
+u8_t find_elem_max(u8_t *pbyarr, u8_t bynum);
+
 /******************************************************************************/
-#endif /* EXAMPLE_H_ */ 
+#endif /* function_H_ */ 
