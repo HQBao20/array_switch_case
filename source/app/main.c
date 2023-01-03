@@ -30,7 +30,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "coderule_git1/source/app/main.h"
-#include "function.h"
+#include "coderule_git1/source/mid/function.h"
 
 /******************************************************************************/
 /*                     EXPORTED TYPES and DEFINITIONS                         */
