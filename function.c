@@ -57,107 +57,107 @@ static void realloc_array(u8_t **byptr, u8_t bynum);
 /******************************************************************************/
 /*                            EXPORTED FUNCTIONS                              */
 /******************************************************************************/
-static void realloc_array(u8_t **byptr, u8_t bynum)
+static void realloc_array(u8_t **pbyPtr, u8_t byNum)
 {
-    *byptr = (u8_t**)realloc(*byptr, bynum * sizeof(u8_t));
+    *pbyPtr = (u8_t**)realloc(*pbyPtr, byNum * sizeof(u8_t));
 }
 
-void create_array(u8_t *byarr, u8_t bynum)
+void create_array(u8_t *pbyBuffer, u8_t byNum)
 {
     u8_t i = 0;
 
-    for(i = 0; i < bynum; i++)
+    for(i = 0; i < byNum; i++)
     {
         prinf("arr[%d] = ", i);
-        scanf("%d", byarr + i);
+        scanf("%d", pbyBuffer + i);
     }
 }
 
-void print_array(u8_t *byarr, u8_t bynum)
+void print_array(u8_t *pbyBuffer, u8_t byNum)
 {
     u8_t i = 0;
 
-    for(i = 0; i < bynum; i++)
+    for(i = 0; i < byNum; i++)
     {
-        prinf("%d ", *(byarr + i));
+        prinf("%d ", *(pbyBuffer + i));
     }
 }
 
-void add_element(u8_t *bynum, u8_t byvalue, u8_t bypos, u8_t *byarr)
+void add_element(u8_t *pbyNum, u8_t byValue, u8_t byPos, u8_t *pbyBuffer)
 {
     u8_t i = 0;
 
-    if(bypos > *bynum)
+    if(byPos > *pbyNum)
     {
-        bypos = *bynum;
+        byPos = *pbyNum;
     }
-    else if(bypos < 0)
+    else if(byPos < 0)
     {
-        bypos = 0;
+        byPos = 0;
     }
-    realloc_array(&byarr, (*bynum + 1));
-    *bynum = *bynum + 1;
-    for(i = *bynum; i > bypos; i--)
+    realloc_array(&pbyBuffer, (*pbyNum + 1));
+    *pbyNum = *pbyNum + 1;
+    for(i = *pbyBuffer; i > byPos; i--)
     {
-        *(byarr + i) = *(byarr + i - 1);
+        *(pbyBuffer + i) = *(pbyBuffer + i - 1);
     }
-    *(byarr + bypos) = byvalue;
+    *(pbyBuffer + byPos) = byValue;
 }
 
-void dele_element(u8_t *bynum, u8_t bypos, u8_t *byarr)
+void dele_element(u8_t *pbyNum, u8_t byPos, u8_t *pbyBuffer)
 {
     u8_t i = 0;
 
-    if(bypos > *bynum)
+    if(byPos > *pbyNum)
     {
-        bypos = *bynum;
+        byPos = *pbyNum;
     }
-    else if(bypos < 0)
+    else if(byPos < 0)
     {
-        bypos = 0;
+        byPos = 0;
     }
-    realloc_array(&byarr, (*bynum - 1));
-    *bynum = *bynum - 1;
-    for(i = bypos; i < *bynum; i++)
+    realloc_array(&pbyBuffer, (*pbyNum - 1));
+    *pbyNum = *pbyNum - 1;
+    for(i = byPos; i < *pbyNum; i++)
     {
-        *(byarr + i) = *(byarr + i + 1);
+        *(pbyBuffer + i) = *(pbyBuffer + i + 1);
     }
 }
 
-void arrange_element(u8_t* pbyarr, u8_t bynum)
+void arrange_element(u8_t *pbyBuffer, u8_t byNum)
 {
     u8_t i = 0;
     u8_t j = 0;
-    u8_t bytemp = 0;
+    u8_t byTemp = 0;
 
-    for(i = 0; i < bynum; i++)
+    for(i = 0; i < byNum; i++)
     {
-        for(j = i; j < bynum - 1; j++)
+        for(j = i; j < byNum - 1; j++)
         {
-            if(*(pbyarr + i) > *(pbyarr + j + 1))
+            if(*(pbyBuffer + i) > *(pbyBuffer + j + 1))
             {
-                bytemp = *(pbyarr + j + 1);
-                *(pbyarr + j + 1) = *(pbyarr + i);
-                *(pbyarr + i) = bytemp;
+                byTemp = *(pbyBuffer + j + 1);
+                *(pbyBuffer + j + 1) = *(pbyBuffer + i);
+                *(pbyBuffer + i) = byTemp;
             }
         }
     }
 }
 
-u8_t find_elem_max(u8_t *pbyarr, u8_t bynum)
+u8_t find_elem_max(u8_t *pbyBuffer, u8_t byNum)
 {
     u8_t i = 0;
-    u8_t bymax = 0;
-    bymax = *pbyarr;
+    u8_t byMax = 0;
+    byMax = *pbyBuffer;
 
-    for (i = 1; i < bynum; i++)
+    for (i = 1; i < byNum; i++)
     {
-        if(bymax < *(pbyarr + i))
+        if(byMax < *(pbyBuffer + i))
         {
-            bymax = *(pbyarr + i);
+            byMax = *(pbyBuffer + i);
         }
     }
 
-    return bymax;
+    return byMax;
 }
 /******************************************************************************/

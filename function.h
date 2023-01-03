@@ -56,7 +56,7 @@
  * @param byarr 
  * @param bynum 
  */
-void create_array(u8_t *byarr, u8_t bynum);
+void create_array(u8_t *pbyBuffer, u8_t byNum);
 
 /**
  * @brief Print array
@@ -64,7 +64,7 @@ void create_array(u8_t *byarr, u8_t bynum);
  * @param byarr 
  * @param bynum 
  */
-void print_array(u8_t *byarr, u8_t bynum);
+void print_array(u8_t *pbyBuffer, u8_t byNum);
 
 /**
  * @brief Add element into arr
@@ -74,7 +74,7 @@ void print_array(u8_t *byarr, u8_t bynum);
  * @param bypos 
  * @param byarr 
  */
-void add_element(u8_t *bynum, u8_t byvalue, u8_t bypos, u8_t *byarr);
+void add_element(u8_t *pbyNum, u8_t byValue, u8_t byPos, u8_t *pbyBuffer);
 
 /**
  * @brief Delete element into arr
@@ -83,7 +83,7 @@ void add_element(u8_t *bynum, u8_t byvalue, u8_t bypos, u8_t *byarr);
  * @param bypos 
  * @param byarr 
  */
-void dele_element(u8_t *bynum, u8_t bypos, u8_t *byarr);
+void dele_element(u8_t *pbyNum, u8_t byPos, u8_t *pbyBuffer);
 
 /**
  * @brief Arrange elements of arr
@@ -91,7 +91,7 @@ void dele_element(u8_t *bynum, u8_t bypos, u8_t *byarr);
  * @param pbyarr 
  * @param bynum 
  */
-void arrange_element(u8_t *pbyarr, u8_t bynum);
+void arrange_element(u8_t *pbyBuffer, u8_t byNum);
 
 /**
  * @brief Find the max element in arr
@@ -100,7 +100,7 @@ void arrange_element(u8_t *pbyarr, u8_t bynum);
  * @param bynum 
  * @return u8_t 
  */
-u8_t find_elem_max(u8_t *pbyarr, u8_t bynum);
+u8_t find_elem_max(u8_t *pbyBuffer, u8_t byNum);
 
 /******************************************************************************/
 #endif /* function_H_ */ 
